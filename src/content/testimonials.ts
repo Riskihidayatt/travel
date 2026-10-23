@@ -1,0 +1,80 @@
+import type { Testimonial } from "./types";
+
+/** Testimoni DEMO (nama fiktif). */
+export const testimonials: Testimonial[] = [
+  {
+    id: "t1",
+    name: "Nadia Putri",
+    handle: "@nadiaputri.jpg",
+    city: "Jakarta",
+    tripTitle: "Sailing Komodo 3D2N",
+    rating: 5,
+    messages: [
+      "kak aku baru sampe rumah dan udah kangen kapalnya",
+      "berangkat sendirian, pulang punya 12 bestie baru. trip leader-nya juara!",
+    ],
+    reply: "Aaa ikut seneng! Sampai ketemu di trip berikutnya ya, Nad!",
+    tone: "lime",
+  },
+  {
+    id: "t2",
+    name: "Raka Pratama",
+    handle: "@rakaprtm",
+    city: "Bandung",
+    tripTitle: "Bromo Midnight Sunrise",
+    rating: 5,
+    messages: [
+      "jujur awalnya ragu karena murah, ternyata jeep-nya private dan sunrise-nya dapet banget",
+      "dokumentasi drone-nya auto jadi wallpaper",
+    ],
+    tone: "tangerine",
+  },
+  {
+    id: "t3",
+    name: "Salsabila",
+    handle: "@salsaa.trip",
+    city: "Surabaya",
+    tripTitle: "Nusa Penida Island Hopping",
+    rating: 5,
+    messages: ["snorkeling bareng manta beneran kejadian", "villa-nya cakep, makanannya enak, no drama sama sekali"],
+    reply: "Manta-nya juga seneng ketemu kamu, Sal!",
+    tone: "lilac",
+  },
+  {
+    id: "t4",
+    name: "Dimas Aditya",
+    handle: "@dimasadt",
+    city: "Yogyakarta",
+    tripTitle: "Rinjani Summit & Segara Anak",
+    rating: 5,
+    messages: [
+      "pendakian terberat tapi paling worth it. porter & guide-nya sabar banget",
+      "makanan di gunung kok bisa seenak itu sih",
+    ],
+    tone: "sky",
+  },
+  {
+    id: "t5",
+    name: "Aurel Kirana",
+    handle: "@aurelkirana",
+    city: "Semarang",
+    tripTitle: "Toraja Heritage Trip",
+    rating: 5,
+    messages: ["guide lokalnya cerita budaya Toraja sampe aku merinding", "dan negeri di atas awannya... speechless"],
+    reply: "Lolai emang nggak pernah gagal. Makasih udah ikut, Rel!",
+    tone: "bubblegum",
+  },
+  {
+    id: "t6",
+    name: "Fajar Nugroho",
+    handle: "@fajarngrh",
+    city: "Malang",
+    tripTitle: "Sumba Savana Roadtrip",
+    rating: 4,
+    messages: [
+      "itinerary-nya padat tapi nggak capek, semua spot dapet golden hour",
+      "next mau ikut Raja Ampat, tabungannya lagi diisi dulu",
+    ],
+    tone: "cream",
+  },
+];
