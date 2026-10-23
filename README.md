@@ -56,8 +56,10 @@ Catatan penting:
   `getTrips()` agar mengembalikan `startDate` / `endDate` absolut (`YYYY-MM-DD`).
 - **Icon fitur/langkah** disimpan sebagai nama string (`"wallet"`, `"users"`, …) yang dipetakan di
   `src/components/ui/Icon.tsx`.
-- **Foto**: ganti `src` dengan URL foto asli. Jika host foto baru bukan Unsplash, tambahkan domainnya
-  di `images.remotePatterns` pada `next.config.ts`, atau taruh file di `public/` dan pakai path `/foto.jpg`.
+- **Foto**: cara paling aman, taruh file di `public/images/destinations/` lalu daftarkan di `localPhotos`
+  (`src/content/media.ts`). Foto lokal selalu tampil & otomatis dioptimasi `next/image`. Bisa juga pakai URL
+  luar; jika host-nya bukan Unsplash, tambahkan domainnya di `images.remotePatterns` pada `next.config.ts`.
+  Kalau sebuah foto gagal dimuat, yang tampil adalah gradien warna-warni (fallback), bukan ikon rusak.
 - **Video hero (opsional)**: isi `home.hero.backgroundVideo` (`src` + `poster`). Video hanya diputar di
   layar ≥ 768px dan bila user tidak memilih *reduced motion*; HP tetap memakai foto.
 
@@ -121,5 +123,5 @@ Arsitektur sudah disiapkan agar mudah dipindah:
 
 ## Lisensi foto
 
-Semua foto adalah **placeholder dari Unsplash** (Unsplash License). Ganti dengan foto asli milik klien
-sebelum dipakai secara komersial.
+Foto di `public/images/destinations/` dan foto Unsplash adalah **placeholder untuk demo**. Ganti dengan
+foto asli milik klien (atau pastikan lisensinya) sebelum dipakai secara komersial.

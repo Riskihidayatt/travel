@@ -46,8 +46,13 @@
 - Redesign hero atas masukan user: sebelumnya terasa "Bromo-sentris" (rotating word mulai "ke Bromo" + chip next trip Bromo). Sekarang headline "Jelajah **Indonesia** bareng circle baru.", background slideshow 6 destinasi + label lokasi, chip "Next trip/Jadwal terdekat" bergilir 5 trip bookable.
 - Belum: verifikasi visual dengan foto asli (sandbox tidak bisa akses Unsplash).
 
+- User sempat minta ganti palet ke "Ocean & Sunset" (teal + coral) lalu MEMBATALKAN: desain awal (tangerine/lime/stiker) dipertahankan. Jangan ubah palet tanpa diminta. "Rainbow" yang dilihat user adalah fallback gradien foto yang gagal dimuat di sandbox.
+- User mengirim 5 foto destinasi → dipasang sebagai foto lokal.
+
 ## 6. Known issues / hutang teknis
-- **Semua foto = placeholder Unsplash** (ID dari hasil pencarian web, tidak diverifikasi langsung). Kalau ada yang 404, AppImage menampilkan gradien. Kredit fotografer belum dicantumkan per foto (hanya "Unsplash").
+- **Foto lokal dari user** di `public/images/destinations/` (bromo, padar, kelingking, piaynemo, toraja) — dipakai untuk hero slideshow, cover/galeri trip Bromo/Komodo/Penida/Raja Ampat/Toraja, galeri, dan bento. Sumber/lisensi belum diketahui → cukup untuk demo, WAJIB diganti/dicek haknya sebelum dipakai komersial. Resolusinya kecil (560–750px, kecuali kelingking 1600px) → akan agak buram bila tampil full-screen di desktop; minta versi ≥1920px.
+- **Foto sisanya = placeholder Unsplash** (Rinjani, Sumba, Sindoro, dll; ID dari hasil pencarian web, tidak diverifikasi langsung). Kalau ada yang gagal, AppImage menampilkan gradien warna-warni (itu fallback, bukan desain). Kredit fotografer belum dicantumkan per foto.
+- OG image membaca foto lokal (path "/...") langsung dari folder `public/`.
 - Nomor WA `6281234567890` dan semua data (testimoni, statistik, alamat, sosmed) FIKTIF.
 - Video hero belum ada (opsional, field `backgroundVideo`).
 - Galeri trip Toraja & Sumba hanya 1 foto.
@@ -55,7 +60,8 @@
 
 ## 7. TODO / catatan untuk agent berikutnya
 - [ ] Ganti nama brand final, logo, dan nomor WhatsApp admin (`src/content/site.ts`).
-- [ ] Ganti semua foto dengan foto asli klien (`src/content/*`, update `next.config.ts` remotePatterns bila host berbeda).
+- [ ] Ganti semua foto dengan foto asli klien (`src/content/*`). Cara termudah: taruh file di `public/images/...` lalu daftarkan di `localPhotos` (`src/content/media.ts`). Untuk host luar, update `next.config.ts` remotePatterns.
+- [ ] Ganti foto Unsplash yang tersisa (Rinjani, Sumba, Sindoro, galeri) dengan foto lokal agar 100% pasti tampil.
 - [ ] Isi data trip, testimoni, statistik asli.
 - [ ] Cek Lighthouse di URL Vercel produksi.
 - [ ] (Masa depan, JANGAN dikerjakan tanpa diminta) Migrasi ke Laravel + Inertia + React + CMS: ganti `AppImage`/`AppLink`, kirim data dari controller dengan bentuk `content/types.ts`.

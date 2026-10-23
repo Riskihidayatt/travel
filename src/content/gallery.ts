@@ -1,14 +1,17 @@
-import { unsplash } from "./media";
+import { localPhotos, unsplash } from "./media";
 import type { GalleryPhoto } from "./types";
 
-/** Foto galeri (PLACEHOLDER Unsplash). `aspect` menentukan bentuk tile di masonry. */
+/**
+ * Foto galeri. Sebagian foto lokal (public/images/destinations), sisanya placeholder Unsplash.
+ * `aspect` menentukan bentuk tile di masonry.
+ */
 export const gallery: GalleryPhoto[] = [
-  { src: unsplash("TG50QzQzZm0", 1400), alt: "Perbukitan Pulau Padar dengan teluk biru", location: "Padar, Labuan Bajo", aspect: "portrait", credit: "Unsplash" },
-  { src: unsplash("LjUpw15tBaY", 1400), alt: "Kaldera Bromo diselimuti abu vulkanik", location: "Bromo", aspect: "landscape", credit: "Unsplash" },
-  { src: unsplash("oOewK0KGXtI", 1400), alt: "Tebing Kelingking Beach di Nusa Penida", location: "Nusa Penida", aspect: "square", credit: "Unsplash" },
-  { src: unsplash("4tMHO3NbUEc", 1400), alt: "Gugusan pulau karst Piaynemo dari udara", location: "Raja Ampat", aspect: "portrait", credit: "Unsplash" },
+  { ...localPhotos.padar, location: "Padar, Labuan Bajo", aspect: "landscape" },
+  { ...localPhotos.bromo, location: "Bromo", aspect: "landscape" },
+  { ...localPhotos.kelingking, location: "Nusa Penida", aspect: "square" },
+  { ...localPhotos.piaynemo, location: "Raja Ampat", aspect: "landscape" },
   { src: unsplash("LdOdyJH-CJc", 1400), alt: "Pendaki di puncak gunung Sembalun", location: "Rinjani", aspect: "landscape", credit: "Unsplash" },
-  { src: unsplash("CD4nKcF6n40", 1400), alt: "Rumah tongkonan di tengah hutan Toraja", location: "Toraja", aspect: "square", credit: "Unsplash" },
+  { ...localPhotos.toraja, location: "Toraja", aspect: "landscape" },
   { src: unsplash("-N0QZc1D1i0", 1400), alt: "Anak-anak Sumba bersama kuda di savana", location: "Sumba Timur", aspect: "portrait", credit: "Unsplash" },
   { src: unsplash("DpnX0AX27iA", 1400), alt: "Dermaga dan kapal di Labuan Bajo", location: "Labuan Bajo", aspect: "landscape", credit: "Unsplash" },
   { src: unsplash("HKTDt5nK_a4", 1400), alt: "Pohon kelapa berjajar di Karimunjawa", location: "Karimunjawa", aspect: "portrait", credit: "Unsplash" },

@@ -1,4 +1,4 @@
-import { unsplash } from "./media";
+import { localPhotos } from "./media";
 import type { HomeContent } from "./types";
 
 /** Semua copy landing page. */
@@ -12,16 +12,16 @@ export const home: HomeContent = {
       "Dari sunrise di Bromo sampai sailing di Labuan Bajo. Daftar sendiri, pulang bawa teman, semua urusan ribet kami yang beresin.",
     primaryCta: { label: "Lihat Paket", href: "#trips" },
     secondaryCtaLabel: "Chat Admin",
+    // Slide pertama = gambar LCP → pakai foto beresolusi paling tinggi.
     slides: [
-      { src: unsplash("TG50QzQzZm0", 2400), alt: "Perbukitan Pulau Padar dengan teluk biru", location: "Padar, Labuan Bajo", credit: "Unsplash" },
-      { src: unsplash("oOewK0KGXtI", 2400), alt: "Tebing Kelingking Beach di Nusa Penida", location: "Nusa Penida, Bali", credit: "Unsplash" },
-      { src: unsplash("4tMHO3NbUEc", 2400), alt: "Gugusan pulau karst Piaynemo dari udara", location: "Piaynemo, Raja Ampat", credit: "Unsplash" },
-      { src: unsplash("-EJSdbwW-bE", 2400), alt: "Rombongan pendaki saat matahari terbit", location: "Sindoro, Jawa Tengah", credit: "Unsplash" },
-      { src: unsplash("CD4nKcF6n40", 2400), alt: "Rumah tongkonan di tengah hutan Toraja", location: "Tana Toraja, Sulawesi", credit: "Unsplash" },
-      { src: unsplash("LjUpw15tBaY", 2400), alt: "Kaldera Bromo diselimuti abu vulkanik", location: "Bromo, Jawa Timur", credit: "Unsplash" },
+      { ...localPhotos.kelingking, location: "Kelingking, Nusa Penida" },
+      { ...localPhotos.padar, location: "Padar, Labuan Bajo" },
+      { ...localPhotos.piaynemo, location: "Piaynemo, Raja Ampat" },
+      { ...localPhotos.bromo, location: "Bromo, Jawa Timur" },
+      { ...localPhotos.toraja, location: "Kete Kesu, Toraja" },
     ],
     // Opsional: isi untuk memakai video di desktop. Poster wajib diisi.
-    // backgroundVideo: { src: "/media/hero.mp4", poster: unsplash("TG50QzQzZm0", 1600) },
+    // backgroundVideo: { src: "/media/hero.mp4", poster: localPhotos.kelingking.src },
     stickerText: "open trip • solo welcome • gaskeun • ",
   },
   trips: {
@@ -62,11 +62,7 @@ export const home: HomeContent = {
       description: "Fotografer + drone di setiap trip. Kamu tinggal pose.",
       tone: "cream",
       size: "tall",
-      image: {
-        src: unsplash("tqvF1JXzOxs", 1200),
-        alt: "Bukit Pulau Padar di samping laut biru",
-        credit: "Unsplash",
-      },
+      image: { ...localPhotos.piaynemo },
     },
     {
       icon: "badge-check",

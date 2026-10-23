@@ -1,5 +1,5 @@
 import { addDays } from "@/lib/dates";
-import { unsplash } from "./media";
+import { localPhotos, unsplash, type LocalPhotoKey } from "./media";
 import type { Photo, Trip } from "./types";
 
 /**
@@ -18,6 +18,7 @@ type TripSeed = Omit<Trip, "startDate" | "endDate"> & {
 };
 
 const photo = (id: string, alt: string): Photo => ({ src: unsplash(id), alt, credit: "Unsplash" });
+const local = (key: LocalPhotoKey): Photo => ({ ...localPhotos[key] });
 
 const tripSeeds: TripSeed[] = [
   {
@@ -28,9 +29,9 @@ const tripSeeds: TripSeed[] = [
     tagline: "Berangkat tengah malam, pulang bawa sunrise paling dramatis se-Jawa.",
     description:
       "Trip singkat tapi nendang. Kita jemput tengah malam dari Malang, naik jeep ke Penanjakan buat ngejar golden hour, lanjut lautan pasir, kawah Bromo, Bukit Teletubbies, sampai Pasir Berbisik. Cocok buat kamu yang cutinya mepet tapi pengen healing beneran.",
-    coverImage: photo("LjUpw15tBaY", "Kaldera Bromo diselimuti abu vulkanik dan vegetasi hijau di bawah langit berawan"),
+    coverImage: local("bromo"),
     gallery: [
-      photo("LjUpw15tBaY", "Kaldera Bromo diselimuti abu vulkanik dan vegetasi hijau"),
+      local("bromo"),
       photo("Z1go3FM7hps", "Puncak gunung berbatu gelap dikelilingi kabut tebal"),
       photo("teQTWeCBDDI", "Lanskap vulkanik tandus Bromo dengan bebatuan dan rumput hijau"),
       photo("dsVT8dIoIm0", "Barisan pegunungan Tengger dengan awan rendah"),
@@ -94,9 +95,9 @@ const tripSeeds: TripSeed[] = [
     tagline: "Tidur di kapal phinisi, bangun di tengah taman nasional paling iconic.",
     description:
       "Tiga hari full di laut Flores: trekking Pulau Padar pas sunrise, ketemu komodo langsung di habitatnya, snorkeling bareng manta, dan main pasir di Pink Beach. Kabin AC, makan enak di kapal, dan sunset tiap hari. Ini trip yang bikin feed kamu naik level.",
-    coverImage: photo("TG50QzQzZm0", "Perbukitan Pulau Padar dengan teluk biru di bawah langit cerah"),
+    coverImage: local("padar"),
     gallery: [
-      photo("TG50QzQzZm0", "Perbukitan Pulau Padar dengan teluk biru"),
+      local("padar"),
       photo("tqvF1JXzOxs", "Bukit cokelat Pulau Padar di samping laut biru"),
       photo("DpnX0AX27iA", "Dermaga dengan kapal di perairan Labuan Bajo"),
     ],
@@ -164,9 +165,9 @@ const tripSeeds: TripSeed[] = [
     tagline: "Kelingking, Diamond Beach & snorkeling bareng manta dalam satu trip.",
     description:
       "Bali versi lebih liar. Kita eksplor sisi barat dan timur Nusa Penida, snorkeling bareng manta di Crystal Bay, terus sunset di Atuh. Nginep di villa dengan pool, tinggal bawa baju renang dan energi.",
-    coverImage: photo("oOewK0KGXtI", "Tebing Kelingking Beach Nusa Penida di samping laut biru"),
+    coverImage: local("kelingking"),
     gallery: [
-      photo("oOewK0KGXtI", "Tebing Kelingking Beach Nusa Penida"),
+      local("kelingking"),
       photo("G4PKcXE21Js", "Formasi tebing Kelingking di atas bukit hijau"),
       photo("8fEZkrBRriA", "Formasi batu karang di pesisir Nusa Penida"),
     ],
@@ -289,9 +290,9 @@ const tripSeeds: TripSeed[] = [
     tagline: "Gugusan karst Piaynemo, laut paling biru, dan sunyi yang mahal.",
     description:
       "Bucket list level akhir. Lima hari menjelajah Raja Ampat: view legendaris Piaynemo, snorkeling di salah satu terumbu karang terkaya di dunia, ketemu cenderawasih, dan nginep di homestay di atas laut. Kuota kecil biar tetap intimate.",
-    coverImage: photo("4tMHO3NbUEc", "Pemandangan udara gugusan pulau karst Piaynemo di Raja Ampat"),
+    coverImage: local("piaynemo"),
     gallery: [
-      photo("4tMHO3NbUEc", "Pemandangan udara gugusan pulau Piaynemo"),
+      local("piaynemo"),
       photo("wjuB3-rbuqg", "Pulau-pulau kecil di perairan Raja Ampat"),
       photo("5IXlq_ZeaP4", "Pemandangan udara pulau di tengah laut Raja Ampat"),
       photo("31g-OHQByK8", "Pemandangan udara sungai dan perbukitan Misool"),
@@ -361,8 +362,8 @@ const tripSeeds: TripSeed[] = [
     tagline: "Rumah tongkonan, negeri di atas awan, dan cerita budaya yang bikin merinding.",
     description:
       "Trip budaya yang bikin kamu pulang dengan perspektif baru. Kita jalan ke Kete Kesu, Lemo, Londa, sampai Lolai, negeri di atas awan, ditemani guide lokal yang ceritanya seru banget. Plus kopi Toraja langsung dari kebunnya.",
-    coverImage: photo("CD4nKcF6n40", "Pemandangan udara rumah tongkonan di tengah hutan Tana Toraja"),
-    gallery: [photo("CD4nKcF6n40", "Pemandangan udara rumah tongkonan di Tana Toraja")],
+    coverImage: local("toraja"),
+    gallery: [local("toraja")],
     startsInDays: 40,
     days: 4,
     durationLabel: "4D3N",

@@ -26,8 +26,20 @@ async function loadFonts() {
   ];
 }
 
-/** Ambil foto sebagai data URL. Kalau gagal (offline/timeout), kembalikan null → pakai gradien. */
+/**
+ * Ambil foto sebagai data URL. Path lokal ("/images/...") dibaca dari folder `public/`.
+ * Kalau gagal (offline/timeout), kembalikan null → pakai gradien.
+ */
 async function loadPhoto(url: string): Promise<string | null> {
+  if (url.startsWith("/")) {
+    try {
+      const file = await readFile(join(process.cwd(), "public", url));
+      const type = url.endsWith(".png") ? "image/png" : "image/jpeg";
+      return `data:${type};base64,${file.toString("base64")}`;
+    } catch {
+      return null;
+    }
+  }
   try {
     const res = await fetch(url, { signal: AbortSignal.timeout(8000), redirect: "follow" });
     if (!res.ok) return null;
