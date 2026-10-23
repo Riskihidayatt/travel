@@ -54,6 +54,8 @@ Catatan penting:
 - **Tanggal trip demo** ditulis sebagai offset hari dari hari ini (`startsInDays`) supaya demo selalu
   terlihat upcoming. Halaman di-regenerate otomatis tiap 24 jam (ISR). Untuk data klien asli, ubah
   `getTrips()` agar mengembalikan `startDate` / `endDate` absolut (`YYYY-MM-DD`).
+- **Tile bento berfoto** (`home.features[].images`): isi 1 foto untuk gambar diam, atau beberapa foto untuk
+  slideshow otomatis.
 - **Icon fitur/langkah** disimpan sebagai nama string (`"wallet"`, `"users"`, …) yang dipetakan di
   `src/components/ui/Icon.tsx`.
 - **Foto**: cara paling aman, taruh file di `public/images/destinations/` lalu daftarkan di `localPhotos`

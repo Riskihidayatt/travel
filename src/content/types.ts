@@ -167,7 +167,8 @@ export interface Feature {
   tone: Tone;
   /** Ukuran tile bento. */
   size: "hero" | "wide" | "tall" | "base";
-  image?: Photo;
+  /** Foto latar tile. Lebih dari 1 foto = slideshow otomatis. */
+  images?: Photo[];
 }
 
 export interface Step {

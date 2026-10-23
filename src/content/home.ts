@@ -65,7 +65,13 @@ export const home: HomeContent = {
       description: "Fotografer + drone di setiap trip. Kamu tinggal pose.",
       tone: "cream",
       size: "tall",
-      image: { ...localPhotos.piaynemo },
+      images: [
+        { ...localPhotos.phinisi },
+        { ...localPhotos.sindoro },
+        { ...localPhotos.piaynemo },
+        { ...localPhotos.kelingking },
+        { ...localPhotos.padar },
+      ],
     },
     {
       icon: "badge-check",

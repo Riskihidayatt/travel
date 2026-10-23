@@ -47,6 +47,7 @@
 - Belum: verifikasi visual dengan foto asli (sandbox tidak bisa akses Unsplash).
 
 - User sempat minta ganti palet ke "Ocean & Sunset" (teal + coral) lalu MEMBATALKAN: desain awal (tangerine/lime/stiker) dipertahankan. Jangan ubah palet tanpa diminta. "Rainbow" yang dilihat user adalah fallback gradien foto yang gagal dimuat di sandbox.
+- Tile bento "Dokumentasi niat" = slideshow crossfade (`ui/FadeSlideshow.tsx`, field `Feature.images[]`; >1 foto = berganti otomatis, hanya jalan saat terlihat, diam saat reduced motion). Bug lama diperbaiki: judul tile berfoto tadinya gelap di atas foto gelap (bentrok `text-ink` dari tone vs `text-cream`) → tile berfoto kini selalu `bg-ink text-cream`.
 - User mengirim 9 foto destinasi (2 batch) → dipasang sebagai foto lokal; sekarang semua cover trip & slide hero pakai foto lokal.
 
 ## 6. Known issues / hutang teknis
