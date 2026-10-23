@@ -210,7 +210,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Trip buat yang pengen naik level. Via Sembalun, kita camping di Plawangan, summit attack dini hari, lalu turun ke Danau Segara Anak buat berendam di air panas. Porter, tenda, dan logistik kita yang urus, kamu fokus jalan aja.",
     coverImage: local("rinjani"),
-    gallery: [local("rinjani"), local("sindoro"), local("bromo")],
+    gallery: [local("rinjani"), local("airTerjun"), local("sindoro"), local("bromo")],
     startsInDays: 30,
     days: 4,
     durationLabel: "4D3N",
@@ -269,8 +269,8 @@ const tripSeeds: TripSeed[] = [
     tagline: "Gugusan karst Piaynemo, laut paling biru, dan sunyi yang mahal.",
     description:
       "Bucket list level akhir. Lima hari menjelajah Raja Ampat: view legendaris Piaynemo, snorkeling di salah satu terumbu karang terkaya di dunia, ketemu cenderawasih, dan nginep di homestay di atas laut. Kuota kecil biar tetap intimate.",
-    coverImage: local("piaynemo"),
-    gallery: [local("piaynemo"), local("phinisi"), local("kelingking"), local("padar")],
+    coverImage: local("wayag"),
+    gallery: [local("wayag"), local("piaynemo"), local("pulauCottage"), local("phinisi")],
     startsInDays: 58,
     days: 5,
     durationLabel: "5D4N",

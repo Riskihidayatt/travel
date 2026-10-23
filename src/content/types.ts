@@ -28,6 +28,8 @@ export interface Photo {
   alt: string;
   /** Kredit fotografer / sumber (wajib diisi untuk foto stok). */
   credit?: string;
+  /** Foto cadangan (mis. file lokal) bila `src` gagal dimuat. */
+  fallbackSrc?: string;
 }
 
 export type TripCategory = "gunung" | "sailing" | "pulau" | "budaya";

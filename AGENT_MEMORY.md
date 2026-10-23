@@ -51,9 +51,10 @@
 - User mengirim 9 foto destinasi (2 batch) → dipasang sebagai foto lokal; sekarang semua cover trip & slide hero pakai foto lokal.
 
 ## 6. Known issues / hutang teknis
-- **Foto lokal dari user** di `public/images/destinations/` (bromo, padar, kelingking, piaynemo, toraja, sindoro-sunrise, phinisi-komodo, rinjani, sumba) — dipakai untuk hero slideshow (8 slide), cover/galeri SEMUA 8 trip, galeri, dan bento. Sumber/lisensi belum diketahui → cukup untuk demo, WAJIB diganti/dicek haknya sebelum dipakai komersial. Resolusinya kecil (560–750px, kecuali kelingking 1600px) → akan agak buram bila tampil full-screen di desktop; minta versi ≥1920px.
-- **Galeri detail trip** sementara diisi ulang dari 9 foto lokal yang sama (foto destinasi sendiri di urutan pertama, sisanya foto bertema mirip — mis. galeri Toraja memuat foto Sumba & Bromo). Ganti dengan foto asli per destinasi saat ada.
-- **Foto sisanya = placeholder Unsplash** (hanya 3 foto di section Galeri landing: Karimunjawa, Tetebatu, dermaga Raja Ampat; ID dari hasil pencarian web, tidak diverifikasi langsung). Kalau ada yang gagal, AppImage menampilkan gradien warna-warni (itu fallback, bukan desain). Kredit fotografer belum dicantumkan per foto.
+- **Foto lokal dari user** di `public/images/destinations/` (12 file: bromo, padar, kelingking, piaynemo, toraja, sindoro-sunrise, phinisi-komodo, rinjani, sumba, air-terjun-lombok, pulau-cottage, wayag) — dipakai untuk SEMUA cover & galeri trip, section Galeri, dan tile bento. Sumber/lisensi belum diketahui → cukup untuk demo, WAJIB diganti/dicek haknya sebelum dipakai komersial. Resolusi kecil (±550–1000px, kecuali kelingking 1600px).
+- **Raja Ampat** memakai foto Wayag dari user (cover, galeri pertama, slide hero) atas permintaan user.
+- **Banner hero = HD Unsplash (2400px) + fallback lokal**: tiap slide punya `src` Unsplash dan `fallbackSrc` foto lokal (fitur `fallbackSrc` di `AppImage`: src gagal → coba fallback → baru gradien). Di sandbox Unsplash diblokir dan fallback terbukti jalan; di Vercel belum terverifikasi apakah versi HD tampil. Slide Raja Ampat sengaja lokal saja. Solusi terbaik: minta foto HD (≥1920px) dari user/klien lalu pakai lokal.
+- Gradien warna-warni = fallback foto yang gagal dimuat, bukan desain.
 - OG image membaca foto lokal (path "/...") langsung dari folder `public/`.
 - Nomor WA `6281234567890` dan semua data (testimoni, statistik, alamat, sosmed) FIKTIF.
 - Video hero belum ada (opsional, field `backgroundVideo`).
@@ -63,7 +64,7 @@
 ## 7. TODO / catatan untuk agent berikutnya
 - [ ] Ganti nama brand final, logo, dan nomor WhatsApp admin (`src/content/site.ts`).
 - [ ] Ganti semua foto dengan foto asli klien (`src/content/*`). Cara termudah: taruh file di `public/images/...` lalu daftarkan di `localPhotos` (`src/content/media.ts`). Untuk host luar, update `next.config.ts` remotePatterns.
-- [ ] Ganti 3 foto Unsplash yang tersisa di section Galeri landing dengan foto lokal agar 100% pasti tampil.
+- [ ] Minta foto HD (≥1920px) untuk banner hero agar tidak bergantung pada Unsplash.
 - [ ] Isi galeri detail tiap trip dengan foto asli destinasi tersebut (sekarang pinjam foto destinasi lain).
 - [ ] Isi data trip, testimoni, statistik asli.
 - [ ] Cek Lighthouse di URL Vercel produksi.

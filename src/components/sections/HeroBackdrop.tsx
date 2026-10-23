@@ -65,6 +65,7 @@ export function HeroBackdrop({ slides, video }: { slides: HeroContent["slides"];
           >
             <AppImage
               src={slide.src}
+              fallbackSrc={slide.fallbackSrc}
               alt=""
               fill
               priority={i === 0}

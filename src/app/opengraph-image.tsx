@@ -8,7 +8,7 @@ export const contentType = "image/png";
 export default async function Image() {
   return renderOg({
     brand: site.name,
-    photoUrl: home.hero.slides[0].src.replace(/w=\d+/, "w=1000"),
+    photoUrl: home.hero.slides[0].fallbackSrc ?? home.hero.slides[0].src,
     eyebrow: "Open trip anak muda",
     title: `${home.hero.headlineLead} ${home.hero.headlineHighlight} bareng circle baru`,
     lines: ["Bromo, Bajo, Penida, Rinjani, Raja Ampat & lainnya."],

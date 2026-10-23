@@ -9,7 +9,8 @@ import { cn } from "@/lib/cn";
  * supaya saat migrasi ke Laravel + Inertia cukup file ini yang diganti
  * (mis. jadi <img loading="lazy"> atau komponen image CDN).
  *
- * Bonus: kalau gambar gagal dimuat, tampil fallback bergradasi (bukan ikon rusak).
+ * Bonus: kalau gambar gagal dimuat, coba `fallbackSrc` dulu (mis. foto lokal),
+ * baru kemudian tampil fallback bergradasi (bukan ikon rusak).
  */
 const FALLBACK_STYLE = {
   background:
@@ -19,19 +20,27 @@ const FALLBACK_STYLE = {
 export type AppImageProps = Omit<ImageProps, "src" | "alt"> & {
   src: string;
   alt: string;
+  /** Dipakai otomatis bila `src` gagal dimuat. */
+  fallbackSrc?: string;
 };
 
-export function AppImage({ className, fill, alt, onError, ...props }: AppImageProps) {
-  const [failed, setFailed] = useState(false);
+type Stage = "primary" | "fallback" | "failed";
+
+export function AppImage({ className, fill, alt, src, fallbackSrc, onError, ...props }: AppImageProps) {
+  const [stage, setStage] = useState<Stage>("primary");
   const imgRef = useRef<HTMLImageElement>(null);
+
+  const fail = () => setStage((s) => (s === "primary" && fallbackSrc ? "fallback" : "failed"));
 
   // Gambar yang gagal SEBELUM React hydrate tidak memicu onError → cek manual.
   useEffect(() => {
     const img = imgRef.current;
-    if (img?.complete && img.naturalWidth === 0) setFailed(true);
-  }, []);
+    if (img?.complete && img.naturalWidth === 0) {
+      setStage((s) => (s === "primary" && fallbackSrc ? "fallback" : "failed"));
+    }
+  }, [fallbackSrc]);
 
-  if (failed) {
+  if (stage === "failed") {
     return (
       <span
         role="img"
@@ -46,11 +55,12 @@ export function AppImage({ className, fill, alt, onError, ...props }: AppImagePr
     <Image
       {...props}
       ref={imgRef}
+      src={stage === "fallback" && fallbackSrc ? fallbackSrc : src}
       alt={alt}
       fill={fill}
       className={className}
       onError={(event) => {
-        setFailed(true);
+        fail();
         onError?.(event);
       }}
     />

@@ -52,6 +52,18 @@ export const localPhotos = {
     src: "/images/destinations/sumba.jpg",
     alt: "Kuda-kuda merumput di padang savana Sumba yang keemasan",
   },
+  airTerjun: {
+    src: "/images/destinations/air-terjun-lombok.jpg",
+    alt: "Air terjun bertingkat di tengah hutan tropis Lombok",
+  },
+  pulauCottage: {
+    src: "/images/destinations/pulau-cottage.jpg",
+    alt: "Pulau kecil dengan cottage terapung di atas laut toska",
+  },
+  wayag: {
+    src: "/images/destinations/wayag.jpg",
+    alt: "Gugusan pulau karst Wayag, Raja Ampat, dilihat dari udara",
+  },
 } as const;
 
 export type LocalPhotoKey = keyof typeof localPhotos;
