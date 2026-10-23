@@ -36,6 +36,22 @@ export const localPhotos = {
     src: "/images/destinations/toraja.jpg",
     alt: "Deretan rumah adat tongkonan di Kete Kesu, Toraja",
   },
+  sindoro: {
+    src: "/images/destinations/sindoro-sunrise.jpg",
+    alt: "Rombongan pendaki menikmati sunrise di atas lautan awan dengan Gunung Sindoro di kejauhan",
+  },
+  phinisi: {
+    src: "/images/destinations/phinisi-komodo.jpg",
+    alt: "Kapal phinisi berlayar di perairan Taman Nasional Komodo dengan peserta di dek",
+  },
+  rinjani: {
+    src: "/images/destinations/rinjani.jpg",
+    alt: "Danau Segara Anak dan Gunung Barujari di kaldera Rinjani",
+  },
+  sumba: {
+    src: "/images/destinations/sumba.jpg",
+    alt: "Kuda-kuda merumput di padang savana Sumba yang keemasan",
+  },
 } as const;
 
 export type LocalPhotoKey = keyof typeof localPhotos;

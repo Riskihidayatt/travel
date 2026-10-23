@@ -19,6 +19,9 @@ export const home: HomeContent = {
       { ...localPhotos.piaynemo, location: "Piaynemo, Raja Ampat" },
       { ...localPhotos.bromo, location: "Bromo, Jawa Timur" },
       { ...localPhotos.toraja, location: "Kete Kesu, Toraja" },
+      { ...localPhotos.rinjani, location: "Segara Anak, Rinjani" },
+      { ...localPhotos.sindoro, location: "Sunrise Sindoro, Jawa Tengah" },
+      { ...localPhotos.sumba, location: "Savana Sumba" },
     ],
     // Opsional: isi untuk memakai video di desktop. Poster wajib diisi.
     // backgroundVideo: { src: "/media/hero.mp4", poster: localPhotos.kelingking.src },

@@ -98,6 +98,7 @@ const tripSeeds: TripSeed[] = [
     coverImage: local("padar"),
     gallery: [
       local("padar"),
+      local("phinisi"),
       photo("tqvF1JXzOxs", "Bukit cokelat Pulau Padar di samping laut biru"),
       photo("DpnX0AX27iA", "Dermaga dengan kapal di perairan Labuan Bajo"),
     ],
@@ -224,8 +225,9 @@ const tripSeeds: TripSeed[] = [
     tagline: "Summit 3.726 mdpl, camping di bibir kawah, berendam air panas.",
     description:
       "Trip buat yang pengen naik level. Via Sembalun, kita camping di Plawangan, summit attack dini hari, lalu turun ke Danau Segara Anak buat berendam di air panas. Porter, tenda, dan logistik kita yang urus, kamu fokus jalan aja.",
-    coverImage: photo("LdOdyJH-CJc", "Dua pendaki berdiri di puncak gunung di Sembalun, Lombok"),
+    coverImage: local("rinjani"),
     gallery: [
+      local("rinjani"),
       photo("LdOdyJH-CJc", "Pendaki berdiri di atas gunung di Sembalun"),
       photo("LS2nt2Nweoo", "Gunung Rinjani dengan pagar kayu di depannya"),
       photo("ym09Mt0X8cs", "Pegunungan Sembalun dengan awan di langit"),
@@ -422,8 +424,8 @@ const tripSeeds: TripSeed[] = [
     tagline: "Bukit savana, kuda Sandalwood, dan kampung adat yang masih hidup.",
     description:
       "Roadtrip ke pulau yang vibes-nya beda sendiri. Bukit Wairinding pas golden hour, Danau Weekuri yang airnya sebening kaca, kampung adat Ratenggaro, dan air terjun Tanggedu. Siapin memori HP, beneran.",
-    coverImage: photo("-N0QZc1D1i0", "Dua anak berpose bersama kuda di lanskap Sumba Timur"),
-    gallery: [photo("-N0QZc1D1i0", "Dua anak bersama kuda di lanskap Sumba Timur")],
+    coverImage: local("sumba"),
+    gallery: [local("sumba"), photo("-N0QZc1D1i0", "Dua anak bersama kuda di lanskap Sumba Timur")],
     startsInDays: 47,
     days: 4,
     durationLabel: "4D3N",
@@ -483,8 +485,9 @@ const tripSeeds: TripSeed[] = [
     tagline: "Pendakian 2 hari buat lihat Sumbing & Merapi muncul dari lautan awan.",
     description:
       "Gunung favorit buat naik kelas dari bukit ke gunung beneran. Jalur Kledung, camp di pos 3, summit pas subuh, dan view Sumbing di depan mata. Batch ini sudah berangkat, tapi batch berikutnya segera dibuka!",
-    coverImage: photo("-EJSdbwW-bE", "Pendaki di jalur gunung saat sunrise dengan Sindoro dan Sumbing di kejauhan"),
+    coverImage: local("sindoro"),
     gallery: [
+      local("sindoro"),
       photo("-EJSdbwW-bE", "Pendaki di jalur gunung saat sunrise"),
       photo("htHwfKiwupk", "Siluet pegunungan saat matahari terbenam"),
     ],
