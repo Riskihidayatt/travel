@@ -1,4 +1,4 @@
-import { localPhotos, unsplash } from "./media";
+import { localPhotos } from "./media";
 import type { HomeContent } from "./types";
 
 /** Semua copy landing page. */
@@ -12,18 +12,17 @@ export const home: HomeContent = {
       "Dari sunrise di Bromo sampai sailing di Labuan Bajo. Daftar sendiri, pulang bawa teman, semua urusan ribet kami yang beresin.",
     primaryCta: { label: "Lihat Paket", href: "#trips" },
     secondaryCtaLabel: "Chat Admin",
-    // Banner memakai versi HD (Unsplash, lebar 2400px). Bila gagal dimuat,
-    // otomatis beralih ke foto lokal (`fallbackSrc`). Slide pertama = gambar LCP.
+    // Foto lokal (selalu tampil & cepat). Slide pertama = gambar LCP → pakai resolusi tertinggi.
+    // Untuk banner yang tajam di layar besar, ganti file dengan versi >= 1920px.
     slides: [
-      { ...localPhotos.kelingking, src: unsplash("oOewK0KGXtI", 2400), fallbackSrc: localPhotos.kelingking.src, location: "Kelingking, Nusa Penida" },
-      { ...localPhotos.padar, src: unsplash("TG50QzQzZm0", 2400), fallbackSrc: localPhotos.padar.src, location: "Padar, Labuan Bajo" },
-      // Raja Ampat: foto dari user (bukan Unsplash) atas permintaan.
+      { ...localPhotos.kelingking, location: "Kelingking, Nusa Penida" },
+      { ...localPhotos.padar, location: "Padar, Labuan Bajo" },
       { ...localPhotos.wayag, location: "Wayag, Raja Ampat" },
-      { ...localPhotos.bromo, src: unsplash("LjUpw15tBaY", 2400), fallbackSrc: localPhotos.bromo.src, location: "Bromo, Jawa Timur" },
-      { ...localPhotos.toraja, src: unsplash("CD4nKcF6n40", 2400), fallbackSrc: localPhotos.toraja.src, location: "Tana Toraja, Sulawesi" },
-      { ...localPhotos.rinjani, src: unsplash("LS2nt2Nweoo", 2400), fallbackSrc: localPhotos.rinjani.src, location: "Rinjani, Lombok" },
-      { ...localPhotos.sindoro, src: unsplash("-EJSdbwW-bE", 2400), fallbackSrc: localPhotos.sindoro.src, location: "Sindoro & Sumbing, Jawa Tengah" },
-      { ...localPhotos.sumba, src: unsplash("-N0QZc1D1i0", 2400), fallbackSrc: localPhotos.sumba.src, location: "Sumba Timur" },
+      { ...localPhotos.bromo, location: "Bromo, Jawa Timur" },
+      { ...localPhotos.toraja, location: "Kete Kesu, Toraja" },
+      { ...localPhotos.rinjani, location: "Segara Anak, Rinjani" },
+      { ...localPhotos.sindoro, location: "Sunrise Sindoro, Jawa Tengah" },
+      { ...localPhotos.sumba, location: "Savana Sumba" },
     ],
     // Opsional: isi untuk memakai video di desktop. Poster wajib diisi.
     // backgroundVideo: { src: "/media/hero.mp4", poster: localPhotos.kelingking.src },

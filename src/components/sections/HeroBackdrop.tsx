@@ -95,7 +95,7 @@ export function HeroBackdrop({ slides, video }: { slides: HeroContent["slides"];
       <div className="absolute inset-0 bg-gradient-to-r from-ink/60 via-transparent to-transparent" />
 
       {!playVideo && current && (
-        <Container className="absolute inset-x-0 top-28 hidden sm:block">
+        <Container className="absolute inset-x-0 bottom-6 hidden sm:block">
           <div className="flex items-center gap-3">
             <span key={current.location} className="fade-up inline-flex items-center gap-1.5 rounded-full bg-ink/50 px-3 py-1.5 text-xs font-semibold text-cream backdrop-blur-md">
               <MapPin className="size-3.5 text-lime" strokeWidth={2.5} />

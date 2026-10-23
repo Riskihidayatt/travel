@@ -29,7 +29,7 @@ export function Hero({ content, whatsappHref, upcoming }: { content: HeroContent
     <section id="top" aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-ink text-cream">
       <HeroBackdrop slides={content.slides} video={content.backgroundVideo} />
 
-      <Container className="relative flex min-h-[100svh] flex-col justify-end pt-28 pb-10 sm:pb-14 lg:pb-16">
+      <Container className="relative flex min-h-[100svh] flex-col justify-end pt-28 pb-10 sm:pb-16 md:justify-center md:pt-32 md:pb-20">
         <SpinningSticker text={content.stickerText} className="absolute top-24 right-5 hidden md:block lg:top-28 lg:right-8" />
 
         <p className="fade-up mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-cream/40 bg-ink/40 px-3.5 py-1.5 text-xs font-semibold tracking-wide backdrop-blur-md sm:text-sm">

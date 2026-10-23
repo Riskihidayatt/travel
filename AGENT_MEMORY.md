@@ -53,7 +53,8 @@
 ## 6. Known issues / hutang teknis
 - **Foto lokal dari user** di `public/images/destinations/` (12 file: bromo, padar, kelingking, piaynemo, toraja, sindoro-sunrise, phinisi-komodo, rinjani, sumba, air-terjun-lombok, pulau-cottage, wayag) — dipakai untuk SEMUA cover & galeri trip, section Galeri, dan tile bento. Sumber/lisensi belum diketahui → cukup untuk demo, WAJIB diganti/dicek haknya sebelum dipakai komersial. Resolusi kecil (±550–1000px, kecuali kelingking 1600px).
 - **Raja Ampat** memakai foto Wayag dari user (cover, galeri pertama, slide hero) atas permintaan user.
-- **Banner hero = HD Unsplash (2400px) + fallback lokal**: tiap slide punya `src` Unsplash dan `fallbackSrc` foto lokal (fitur `fallbackSrc` di `AppImage`: src gagal → coba fallback → baru gradien). Di sandbox Unsplash diblokir dan fallback terbukti jalan; di Vercel belum terverifikasi apakah versi HD tampil. Slide Raja Ampat sengaja lokal saja. Solusi terbaik: minta foto HD (≥1920px) dari user/klien lalu pakai lokal.
+- **Banner hero = foto lokal saja.** Percobaan versi HD Unsplash (2400px, `/download` redirect) membuat banner HITAM di perangkat user (gambar macet dimuat, onError tidak terpicu) → dibatalkan. Jangan pakai lagi URL Unsplash `/download` untuk banner. Fitur `fallbackSrc` di `AppImage` tetap ada (berguna untuk URL luar). Banner tajam butuh file lokal >= 1920px.
+- Konten hero: rata bawah di HP, rata tengah vertikal di md+ (masukan user: "kebawahan"); label lokasi slide di pojok kiri bawah (sm+).
 - Gradien warna-warni = fallback foto yang gagal dimuat, bukan desain.
 - OG image membaca foto lokal (path "/...") langsung dari folder `public/`.
 - Nomor WA `6281234567890` dan semua data (testimoni, statistik, alamat, sosmed) FIKTIF.
