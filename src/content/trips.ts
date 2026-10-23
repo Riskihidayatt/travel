@@ -1,5 +1,5 @@
 import { addDays } from "@/lib/dates";
-import { localPhotos, unsplash, type LocalPhotoKey } from "./media";
+import { localPhotos, type LocalPhotoKey } from "./media";
 import type { Photo, Trip } from "./types";
 
 /**
@@ -17,7 +17,6 @@ type TripSeed = Omit<Trip, "startDate" | "endDate"> & {
   days: number;
 };
 
-const photo = (id: string, alt: string): Photo => ({ src: unsplash(id), alt, credit: "Unsplash" });
 const local = (key: LocalPhotoKey): Photo => ({ ...localPhotos[key] });
 
 const tripSeeds: TripSeed[] = [
@@ -30,13 +29,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Trip singkat tapi nendang. Kita jemput tengah malam dari Malang, naik jeep ke Penanjakan buat ngejar golden hour, lanjut lautan pasir, kawah Bromo, Bukit Teletubbies, sampai Pasir Berbisik. Cocok buat kamu yang cutinya mepet tapi pengen healing beneran.",
     coverImage: local("bromo"),
-    gallery: [
-      local("bromo"),
-      photo("Z1go3FM7hps", "Puncak gunung berbatu gelap dikelilingi kabut tebal"),
-      photo("teQTWeCBDDI", "Lanskap vulkanik tandus Bromo dengan bebatuan dan rumput hijau"),
-      photo("dsVT8dIoIm0", "Barisan pegunungan Tengger dengan awan rendah"),
-      photo("Cg0vMCKWEXc", "Pegunungan dengan lautan awan di bagian depan"),
-    ],
+    gallery: [local("bromo"), local("sindoro"), local("rinjani")],
     startsInDays: 11,
     days: 2,
     durationLabel: "2D1N",
@@ -96,12 +89,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Tiga hari full di laut Flores: trekking Pulau Padar pas sunrise, ketemu komodo langsung di habitatnya, snorkeling bareng manta, dan main pasir di Pink Beach. Kabin AC, makan enak di kapal, dan sunset tiap hari. Ini trip yang bikin feed kamu naik level.",
     coverImage: local("padar"),
-    gallery: [
-      local("padar"),
-      local("phinisi"),
-      photo("tqvF1JXzOxs", "Bukit cokelat Pulau Padar di samping laut biru"),
-      photo("DpnX0AX27iA", "Dermaga dengan kapal di perairan Labuan Bajo"),
-    ],
+    gallery: [local("padar"), local("phinisi"), local("piaynemo"), local("kelingking")],
     startsInDays: 23,
     days: 3,
     durationLabel: "3D2N",
@@ -167,11 +155,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Bali versi lebih liar. Kita eksplor sisi barat dan timur Nusa Penida, snorkeling bareng manta di Crystal Bay, terus sunset di Atuh. Nginep di villa dengan pool, tinggal bawa baju renang dan energi.",
     coverImage: local("kelingking"),
-    gallery: [
-      local("kelingking"),
-      photo("G4PKcXE21Js", "Formasi tebing Kelingking di atas bukit hijau"),
-      photo("8fEZkrBRriA", "Formasi batu karang di pesisir Nusa Penida"),
-    ],
+    gallery: [local("kelingking"), local("piaynemo"), local("phinisi"), local("padar")],
     startsInDays: 17,
     days: 3,
     durationLabel: "3D2N",
@@ -226,14 +210,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Trip buat yang pengen naik level. Via Sembalun, kita camping di Plawangan, summit attack dini hari, lalu turun ke Danau Segara Anak buat berendam di air panas. Porter, tenda, dan logistik kita yang urus, kamu fokus jalan aja.",
     coverImage: local("rinjani"),
-    gallery: [
-      local("rinjani"),
-      photo("LdOdyJH-CJc", "Pendaki berdiri di atas gunung di Sembalun"),
-      photo("LS2nt2Nweoo", "Gunung Rinjani dengan pagar kayu di depannya"),
-      photo("ym09Mt0X8cs", "Pegunungan Sembalun dengan awan di langit"),
-      photo("u4R-x6ZGdJ4", "Padang rumput Sembalun di kaki Rinjani"),
-      photo("Qq0Coemj0Ng", "Sawah hijau dengan Gunung Rinjani di kejauhan"),
-    ],
+    gallery: [local("rinjani"), local("sindoro"), local("bromo")],
     startsInDays: 30,
     days: 4,
     durationLabel: "4D3N",
@@ -293,13 +270,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Bucket list level akhir. Lima hari menjelajah Raja Ampat: view legendaris Piaynemo, snorkeling di salah satu terumbu karang terkaya di dunia, ketemu cenderawasih, dan nginep di homestay di atas laut. Kuota kecil biar tetap intimate.",
     coverImage: local("piaynemo"),
-    gallery: [
-      local("piaynemo"),
-      photo("wjuB3-rbuqg", "Pulau-pulau kecil di perairan Raja Ampat"),
-      photo("5IXlq_ZeaP4", "Pemandangan udara pulau di tengah laut Raja Ampat"),
-      photo("31g-OHQByK8", "Pemandangan udara sungai dan perbukitan Misool"),
-      photo("BSq0evBiUNs", "Dermaga kayu menuju homestay di pulau tropis Raja Ampat"),
-    ],
+    gallery: [local("piaynemo"), local("phinisi"), local("kelingking"), local("padar")],
     startsInDays: 58,
     days: 5,
     durationLabel: "5D4N",
@@ -365,7 +336,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Trip budaya yang bikin kamu pulang dengan perspektif baru. Kita jalan ke Kete Kesu, Lemo, Londa, sampai Lolai, negeri di atas awan, ditemani guide lokal yang ceritanya seru banget. Plus kopi Toraja langsung dari kebunnya.",
     coverImage: local("toraja"),
-    gallery: [local("toraja")],
+    gallery: [local("toraja"), local("sumba"), local("bromo")],
     startsInDays: 40,
     days: 4,
     durationLabel: "4D3N",
@@ -425,7 +396,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Roadtrip ke pulau yang vibes-nya beda sendiri. Bukit Wairinding pas golden hour, Danau Weekuri yang airnya sebening kaca, kampung adat Ratenggaro, dan air terjun Tanggedu. Siapin memori HP, beneran.",
     coverImage: local("sumba"),
-    gallery: [local("sumba"), photo("-N0QZc1D1i0", "Dua anak bersama kuda di lanskap Sumba Timur")],
+    gallery: [local("sumba"), local("toraja"), local("padar")],
     startsInDays: 47,
     days: 4,
     durationLabel: "4D3N",
@@ -486,11 +457,7 @@ const tripSeeds: TripSeed[] = [
     description:
       "Gunung favorit buat naik kelas dari bukit ke gunung beneran. Jalur Kledung, camp di pos 3, summit pas subuh, dan view Sumbing di depan mata. Batch ini sudah berangkat, tapi batch berikutnya segera dibuka!",
     coverImage: local("sindoro"),
-    gallery: [
-      local("sindoro"),
-      photo("-EJSdbwW-bE", "Pendaki di jalur gunung saat sunrise"),
-      photo("htHwfKiwupk", "Siluet pegunungan saat matahari terbenam"),
-    ],
+    gallery: [local("sindoro"), local("bromo"), local("rinjani")],
     startsInDays: -6,
     days: 2,
     durationLabel: "2D1N",

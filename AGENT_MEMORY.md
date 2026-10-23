@@ -51,7 +51,8 @@
 
 ## 6. Known issues / hutang teknis
 - **Foto lokal dari user** di `public/images/destinations/` (bromo, padar, kelingking, piaynemo, toraja, sindoro-sunrise, phinisi-komodo, rinjani, sumba) — dipakai untuk hero slideshow (8 slide), cover/galeri SEMUA 8 trip, galeri, dan bento. Sumber/lisensi belum diketahui → cukup untuk demo, WAJIB diganti/dicek haknya sebelum dipakai komersial. Resolusinya kecil (560–750px, kecuali kelingking 1600px) → akan agak buram bila tampil full-screen di desktop; minta versi ≥1920px.
-- **Foto sisanya = placeholder Unsplash** (3 foto galeri: Karimunjawa, Tetebatu, dermaga Raja Ampat; foto ke-2+ di galeri beberapa trip; ID dari hasil pencarian web, tidak diverifikasi langsung). Kalau ada yang gagal, AppImage menampilkan gradien warna-warni (itu fallback, bukan desain). Kredit fotografer belum dicantumkan per foto.
+- **Galeri detail trip** sementara diisi ulang dari 9 foto lokal yang sama (foto destinasi sendiri di urutan pertama, sisanya foto bertema mirip — mis. galeri Toraja memuat foto Sumba & Bromo). Ganti dengan foto asli per destinasi saat ada.
+- **Foto sisanya = placeholder Unsplash** (hanya 3 foto di section Galeri landing: Karimunjawa, Tetebatu, dermaga Raja Ampat; ID dari hasil pencarian web, tidak diverifikasi langsung). Kalau ada yang gagal, AppImage menampilkan gradien warna-warni (itu fallback, bukan desain). Kredit fotografer belum dicantumkan per foto.
 - OG image membaca foto lokal (path "/...") langsung dari folder `public/`.
 - Nomor WA `6281234567890` dan semua data (testimoni, statistik, alamat, sosmed) FIKTIF.
 - Video hero belum ada (opsional, field `backgroundVideo`).
@@ -61,7 +62,8 @@
 ## 7. TODO / catatan untuk agent berikutnya
 - [ ] Ganti nama brand final, logo, dan nomor WhatsApp admin (`src/content/site.ts`).
 - [ ] Ganti semua foto dengan foto asli klien (`src/content/*`). Cara termudah: taruh file di `public/images/...` lalu daftarkan di `localPhotos` (`src/content/media.ts`). Untuk host luar, update `next.config.ts` remotePatterns.
-- [ ] Ganti foto Unsplash yang tersisa (3 foto galeri + foto tambahan di galeri trip) dengan foto lokal agar 100% pasti tampil.
+- [ ] Ganti 3 foto Unsplash yang tersisa di section Galeri landing dengan foto lokal agar 100% pasti tampil.
+- [ ] Isi galeri detail tiap trip dengan foto asli destinasi tersebut (sekarang pinjam foto destinasi lain).
 - [ ] Isi data trip, testimoni, statistik asli.
 - [ ] Cek Lighthouse di URL Vercel produksi.
 - [ ] (Masa depan, JANGAN dikerjakan tanpa diminta) Migrasi ke Laravel + Inertia + React + CMS: ganti `AppImage`/`AppLink`, kirim data dari controller dengan bentuk `content/types.ts`.
