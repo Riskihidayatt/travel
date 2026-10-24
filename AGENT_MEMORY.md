@@ -54,7 +54,7 @@
 - **Foto lokal dari user** di `public/images/destinations/` (12 file: bromo, padar, kelingking, piaynemo, toraja, sindoro-sunrise, phinisi-komodo, rinjani, sumba, air-terjun-lombok, pulau-cottage, wayag) — dipakai untuk SEMUA cover & galeri trip, section Galeri, dan tile bento. Sumber/lisensi belum diketahui → cukup untuk demo, WAJIB diganti/dicek haknya sebelum dipakai komersial. Resolusi kecil (±550–1000px, kecuali kelingking 1600px).
 - **Raja Ampat** memakai foto Wayag dari user (cover, galeri pertama, slide hero) atas permintaan user.
 - **Banner hero = foto lokal saja.** Percobaan versi HD Unsplash (2400px, `/download` redirect) membuat banner HITAM di perangkat user (gambar macet dimuat, onError tidak terpicu) → dibatalkan. Jangan pakai lagi URL Unsplash `/download` untuk banner. Fitur `fallbackSrc` di `AppImage` tetap ada (berguna untuk URL luar). Banner tajam butuh file lokal >= 1920px.
-- Konten hero: rata bawah di HP, rata tengah vertikal di md+ (masukan user: "kebawahan"); label lokasi slide di pojok kiri bawah (sm+).
+- Konten hero: rata bawah di HP, rata tengah vertikal di md+ (masukan user: "kebawahan"); label lokasi slide di kiri atas, di bawah navbar (sm+; user minta tetap di atas).
 - Gradien warna-warni = fallback foto yang gagal dimuat, bukan desain.
 - OG image membaca foto lokal (path "/...") langsung dari folder `public/`.
 - Nomor WA `6281234567890` dan semua data (testimoni, statistik, alamat, sosmed) FIKTIF.
